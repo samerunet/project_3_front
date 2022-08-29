@@ -4,7 +4,37 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
+	const [username, setUsername] = useState("");
+	const [Image, setImage] = useState("");
+	const [video, setVideo] = useState("");
+	const [comment, setComment] = useState("");
+	const [likes, setLikes] = useState(0);
+	const [captions, setCaptions] = useState("");
 	const [data, setData] = useState([]);
+
+	const handleNewUser = (event) => {
+		setUsername(event.target.value);
+	};
+
+	const handlesetImage = (event) => {
+		setImage(event.target.value);
+	};
+
+	const handlesetVideo = (event) => {
+		setVideo(event.target.value);
+	};
+
+	const handlesetComment = (event) => {
+		setComment(event.target.value);
+	};
+
+	const handlesetLikes = (event) => {
+		setLikes(event.target.value);
+	};
+
+	const handlesetCaptions = (event) => {
+		setCaptions(event.target.value);
+	};
 
 	const handleNew = (event) => {
 		event.preventDefault();
@@ -67,6 +97,9 @@ function App() {
 	return (
 		<div className='App'>
 			<h1>Are you actually running??</h1>
+			<form onSubmit={handleNew}>
+				caption:<input type='text' onChange={handlesetCaptions}></input>
+			</form>
 			<h4>created branch </h4>
 			<ul>
 				{data.map((post) => {
