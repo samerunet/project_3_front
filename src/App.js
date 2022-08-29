@@ -97,8 +97,13 @@ function App() {
 	return (
 		<div className='App'>
 			<h1>Are you actually running??</h1>
-			<form onSubmit={handleNew}>
-				caption:<input type='text' onChange={handlesetCaptions}></input>
+			<form class='form-control' onSubmit={handleNew}>
+				Caption:<input class='form-control' type='text' onChange={handlesetCaptions}></input>
+				Comment: <input class='form-control' placeholder='Comment' type='text' onChange={handlesetComment}/><br/>
+				Video: <input class='form-control' placeholder='Insert Video' type='text' onChange={handlesetVideo}/><br/>
+				User: <input class='form-control' placeholder='Username' type='text' onChange={handleNewUser}/><br/>
+         		Likes: <input class='form-control' type="text" onChange={handlesetLikes}/><br/>
+          		Image: <input class='form-control' placeholder='Insert Image' type="text" onChange={handlesetImage}/><br/>
 			</form>
 			<h4>created branch </h4>
 			<ul>
