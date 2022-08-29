@@ -30,7 +30,6 @@ function App() {
 		});
 	}, []);
 
-
 	// const handleDelete = (dogDelete) => {
 	// 	axios.delete(`http://localhost:3000/animal/${dogDelete._id}`).then(() => {
 	// 		axios.get("http://localhost:3000/animal").then((response) => {
@@ -56,16 +55,16 @@ function App() {
 	return (
 		<div className='App'>
 			<h1>Are you actually running??</h1>
-      <h4>created branch </h4>
-      <ul>
-        data.map((post) => {
-          return (
-        <div>
-          <li key={data._id}>{post.caption}</li>
-        </div>
-          )
-        }) 
-      </ul>
+			<h4>created branch </h4>
+			<ul>
+				{data.map((post) => {
+					return (
+						<div>
+							<li key={data._id}>{post.caption}</li>
+						</div>
+					);
+				})}
+			</ul>
 		</div>
 	);
 }
