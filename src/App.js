@@ -6,23 +6,25 @@ import axios from "axios";
 function App() {
 	const [data, setData] = useState([]);
 
-	// const handleNewFormSubmit = (event) => {
-	// 	event.preventDefault();
-	// 	axios
-	// 		.post("https://young-oasis-10029.herokuapp.com/create", {
-	// 			username: String,
-	// 			image: String,
-	// 			video: String,
-	// 			comment: String,
-	// 			likes: Number,
-	// 			caption: String,
-	// 		})
-	// 		.then(() => {
-	// 			axios.get("http://localhost:3000/animal").then((response) => {
-	// 				setAnimal(response.data);
-	// 			});
-	// 		});
-	// };
+	const handleNew = (event) => {
+		event.preventDefault();
+		axios
+			.post("https://young-oasis-10029.herokuapp.com/create", {
+				username: String,
+				image: String,
+				video: String,
+				comment: String,
+				likes: Number,
+				caption: String,
+			})
+			.then(() => {
+				axios
+					.get("https://young-oasis-10029.herokuapp.com/")
+					.then((response) => {
+						data(response.data);
+					});
+			});
+	};
 
 	useEffect(() => {
 		axios.get("https://young-oasis-10029.herokuapp.com/").then((response) => {
@@ -30,28 +32,38 @@ function App() {
 		});
 	}, []);
 
-	// const handleDelete = (dogDelete) => {
-	// 	axios.delete(`http://localhost:3000/animal/${dogDelete._id}`).then(() => {
-	// 		axios.get("http://localhost:3000/animal").then((response) => {
-	// 			setAnimal(response.data);
-	// 		});
-	// 	});
-	// };
+	const handleDelete = (dataDelete) => {
+		axios
+			.delete(
+				`https://young-oasis-10029.herokuapp.com/delete/${dataDelete._id}`
+			)
+			.then(() => {
+				axios
+					.get("https://young-oasis-10029.herokuapp.com/")
+					.then((response) => {
+						data(response.data);
+					});
+			});
+	};
 
-	// const handleUpdateDescription = (animalData) => {
-	// 	axios
-	// 		.put(`http://localhost:3000/animal/${animalData._id}`, {
-	// 			name: updateName,
-	// 			breed: updateBreed,
-	// 			image: updateImage,
-	// 			adopted: updateAdopted,
-	// 		})
-	// 		.then(() => {
-	// 			axios.get("http://localhost:3000/animal").then((response) => {
-	// 				setAnimal(response.data);
-	// 			});
-	// 		});
-	// };
+	const handleUpdate = (Data) => {
+		axios
+			.put(`https://young-oasis-10029.herokuapp.com/update/${Data._id}`, {
+				username: String,
+				image: String,
+				video: String,
+				comment: String,
+				likes: Number,
+				caption: String,
+			})
+			.then(() => {
+				axios
+					.get("https://young-oasis-10029.herokuapp.com/")
+					.then((response) => {
+						data(response.data);
+					});
+			});
+	};
 	return (
 		<div className='App'>
 			<h1>Are you actually running??</h1>
