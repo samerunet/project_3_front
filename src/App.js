@@ -63,7 +63,6 @@ function App() {
 	}, []);
 
 	const handleUpdate = (Data) => {
-		Data.preventDefault();
 		axios
 			.put(`https://young-oasis-10029.herokuapp.com/update/${Data._id}`, {
 				username: username ? username : Data.username,
@@ -168,7 +167,7 @@ function App() {
 							</button>
 							<div className='updateForm'>
 								<form className='form-control' onSubmit={handleUpdate}>
-									username:
+									username:{""}
 									<input
 										className='form-control'
 										placeholder={post.username}
@@ -176,7 +175,7 @@ function App() {
 										onChange={handleNewUser}
 									/>
 									<br />
-									image:
+									image:{""}
 									<input
 										className='form-control'
 										placeholder={post.image}
@@ -184,7 +183,7 @@ function App() {
 										onChange={handlesetImage}
 									/>
 									<br />
-									video:
+									video:{""}
 									<input
 										className='form-control'
 										placeholder={post.video}
@@ -192,7 +191,7 @@ function App() {
 										onChange={handlesetVideo}
 									/>
 									<br />
-									comment:
+									comment:{""}
 									<input
 										className='form-control'
 										placeholder={post.comment}
@@ -200,7 +199,7 @@ function App() {
 										onChange={handlesetComment}
 									/>
 									<br />
-									likes:
+									likes:{""}
 									<input
 										className='form-control'
 										type='number'
@@ -208,7 +207,7 @@ function App() {
 										onChange={handlesetLikes}
 									/>
 									<br />
-									caption:
+									caption:{""}
 									<input
 										className='form-control'
 										placeholder={post.caption}
