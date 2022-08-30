@@ -95,25 +95,25 @@ function App() {
 			});
 	};
 
-	let like = 0;
-	$(document).ready(function () {
-		// ajax to get current likes
-		// let likes from server are 10
-		// assign the current likes to variable
-		like = 10;
-		setLikes(like);
-	});
+	// let like = 0;
+	// $(document).ready(function () {
+	// 	// ajax to get current likes
+	// 	// let likes from server are 10
+	// 	// assign the current likes to variable
+	// 	like = 10;
+	// 	setLikes(like);
+	// });
 
-	$("body").on("click", ".likeBtn", function () {
-		// ajax to post a current likes
-		// in success add increment to likes
-		like++;
-		setLikes(like);
-	});
+	// $("body").on("click", ".likeBtn", function () {
+	// 	// ajax to post a current likes
+	// 	// in success add increment to likes
+	// 	like++;
+	// 	setLikes(like);
+	// });
 
-	function setLikes(count) {
-		$(".totalLikes").text(count);
-	}
+	// function setLikes(count) {
+	// 	$(".totalLikes").text(count);
+	// }
 
 	return (
 		<div className='App'>
