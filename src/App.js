@@ -99,8 +99,10 @@ function App() {
 	return (
 		<div className='App'>
 			<Header/>
-			<h1>Are you actually running??</h1>
-			<form className='form-control' onSubmit={handleNew}>
+			<div >
+			<br />
+			<br />
+			<form className='form-control'  onSubmit={handleNew}>
 				username:
 				<input
 					className='form-control'
@@ -149,6 +151,7 @@ function App() {
 				<br />
 				<input type='submit' value='Add new post' />
 			</form>
+			</div>
 			<h4>created branch </h4>
 			<ul>
 				{data.map((post) => {

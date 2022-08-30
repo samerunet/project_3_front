@@ -1,7 +1,9 @@
 const Footer = (props) => {
 	return (
-		<div className='post'>
-			<h2> Post: {props.libraries}</h2>
+		<div class="nav nav-masthead justify-content-center" className='post'>
+			<footer class="mt-auto text-white-50">
+    <p>PLACEHOLDER</p>
+  </footer>
 		</div>
 	);
 };
