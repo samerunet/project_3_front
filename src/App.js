@@ -65,12 +65,12 @@ function App() {
 	const handleUpdate = (Data) => {
 		axios
 			.put(`https://young-oasis-10029.herokuapp.com/update/${Data._id}`, {
-				username: username,
-				image: image,
-				video: video,
-				comment: comment,
-				likes: likes,
-				caption: captions,
+				username: username ? username : Data.username,
+				image: image ? image : Data.image,
+				video: video ? video : Data.video,
+				comment: comment ? comment : Data.comment,
+				likes: likes ? likes : Data.likes,
+				caption: captions ? captions : Data.caption,
 			})
 			.then(() => {
 				axios
