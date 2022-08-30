@@ -5,7 +5,7 @@ import axios from "axios";
 
 function App() {
 	const [username, setUsername] = useState("");
-	const [Image, setImage] = useState("");
+	const [image, setImage] = useState("");
 	const [video, setVideo] = useState("");
 	const [comment, setComment] = useState("");
 	const [likes, setLikes] = useState(0);
@@ -40,12 +40,12 @@ function App() {
 		event.preventDefault();
 		axios
 			.post("https://young-oasis-10029.herokuapp.com/create", {
-				username: setUsername,
-				image: setImage,
-				video: setVideo,
-				comment: setComment,
-				likes: setLikes,
-				caption: setCaptions,
+				username: username,
+				image: image,
+				video: video,
+				comment: comment,
+				likes: likes,
+				caption: captions,
 			})
 			.then(() => {
 				axios
@@ -62,24 +62,24 @@ function App() {
 		});
 	}, []);
 
-	// const handleUpdate = (Data) => {
-	// 	axios
-	// 		.put(`https://young-oasis-10029.herokuapp.com/update/${Data._id}`, {
-	// 			username: String,
-	// 			image: String,
-	// 			video: String,
-	// 			comment: String,
-	// 			likes: Number,
-	// 			caption: String,
-	// 		})
-	// 		.then(() => {
-	// 			axios
-	// 				.get("https://young-oasis-10029.herokuapp.com/")
-	// 				.then((response) => {
-	// 					setData(response.data);
-	// 				});
-	// 		});
-	// };
+	const handleUpdate = (Data) => {
+		axios
+			.put(`https://young-oasis-10029.herokuapp.com/update/${Data._id}`, {
+				username: username,
+				image: image,
+				video: video,
+				comment: comment,
+				likes: likes,
+				caption: captions,
+			})
+			.then(() => {
+				axios
+					.get("https://young-oasis-10029.herokuapp.com/")
+					.then((response) => {
+						setData(response.data);
+					});
+			});
+	};
 
 	const handleDelete = (dataDelete) => {
 		axios
