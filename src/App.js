@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-
+import Header from "./components/Header.js";
+import Footer from "./components/Footer.js";
 import axios from "axios";
 
 function App() {
@@ -97,6 +98,7 @@ function App() {
 
 	return (
 		<div className='App'>
+			<Header/>
 			<h1>Are you actually running??</h1>
 			<form className='form-control' onSubmit={handleNew}>
 				username:
@@ -222,7 +224,9 @@ function App() {
 					);
 				})}
 			</ul>
+			<Footer/>
 		</div>
+
 	);
 }
 
