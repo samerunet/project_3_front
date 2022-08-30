@@ -94,17 +94,49 @@ function App() {
 					});
 			});
 	};
+
+	let like = 0;
+	$(document).ready(function () {
+	  // ajax to get current likes
+	  // let likes from server are 10
+	  // assign the current likes to variable
+	  like = 10;
+	  setLikes(like);
+	});
+	
+	$("body").on("click", ".likeBtn", function () {
+	  // ajax to post a current likes
+	  // in success add increment to likes
+	  like++;
+	  setLikes(like);
+	});
+
+	function setLikes(count) {
+	  $(".totalLikes").text(count);
+	}
+
 	return (
 		<div className='App'>
 			<h1>Are you actually running??</h1>
 			<form class='form-control' onSubmit={handleNew}>
 				Caption:<input class='form-control' type='text' onChange={handlesetCaptions}></input>
+				
 				Comment: <input class='form-control' placeholder='Comment' type='text' onChange={handlesetComment}/><br/>
+
 				Video: <input class='form-control' placeholder='Insert Video' type='text' onChange={handlesetVideo}/><br/>
+
 				User: <input class='form-control' placeholder='Username' type='text' onChange={handleNewUser}/><br/>
+
 				<div class="fb-like" data-href="https://young-oasis-10029.herokuapp.com/" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+
+				 <button class="likeBtn">
+      			Like (<span class="totalLikes">0</span>)
+   				 </button>
+
          		Likes: <input class='form-control' type="text" onChange={handlesetLikes}/><br/>
+
           		Image: <input class='form-control' placeholder='Insert Image' type="text" onChange={handlesetImage}/><br/>
+
 			</form>
 			<h4>created branch </h4>
 			<ul>
