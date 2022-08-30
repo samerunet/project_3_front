@@ -102,6 +102,7 @@ function App() {
 				Comment: <input class='form-control' placeholder='Comment' type='text' onChange={handlesetComment}/><br/>
 				Video: <input class='form-control' placeholder='Insert Video' type='text' onChange={handlesetVideo}/><br/>
 				User: <input class='form-control' placeholder='Username' type='text' onChange={handleNewUser}/><br/>
+				<div class="fb-like" data-href="https://young-oasis-10029.herokuapp.com/" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
          		Likes: <input class='form-control' type="text" onChange={handlesetLikes}/><br/>
           		Image: <input class='form-control' placeholder='Insert Image' type="text" onChange={handlesetImage}/><br/>
 			</form>
