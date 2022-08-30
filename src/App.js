@@ -40,12 +40,12 @@ function App() {
 		event.preventDefault();
 		axios
 			.post("https://young-oasis-10029.herokuapp.com/create", {
-				username: String,
-				image: String,
-				video: String,
-				comment: String,
-				likes: Number,
-				caption: String,
+				username: setUsername,
+				image: setImage,
+				video: setVideo,
+				comment: setComment,
+				likes: setLikes,
+				caption: setCaptions,
 			})
 			.then(() => {
 				axios
@@ -61,20 +61,6 @@ function App() {
 			setData(response.data);
 		});
 	}, []);
-
-	const handleDelete = (dataDelete) => {
-		axios
-			.delete(
-				`https://young-oasis-10029.herokuapp.com/delete/${dataDelete._id}`
-			)
-			.then(() => {
-				axios
-					.get("https://young-oasis-10029.herokuapp.com/")
-					.then((response) => {
-						data(response.data);
-					});
-			});
-	};
 
 	const handleUpdate = (Data) => {
 		axios
@@ -95,25 +81,37 @@ function App() {
 			});
 	};
 
-	let like = 0;
-	$(document).ready(function () {
-		// ajax to get current likes
-		// let likes from server are 10
-		// assign the current likes to variable
-		like = 10;
-		setLikes(like);
-	});
+	const handleDelete = (dataDelete) => {
+		axios
+			.delete(`https://young-oasis-10029.herokuapp.com/delete/${dataDelete.id}`)
+			.then(() => {
+				axios
+					.get("https://young-oasis-10029.herokuapp.com/")
+					.then((response) => {
+						data(response.data);
+					});
+			});
+	};
 
-	$("body").on("click", ".likeBtn", function () {
-		// ajax to post a current likes
-		// in success add increment to likes
-		like++;
-		setLikes(like);
-	});
+	// let like = 0;
+	// $(document).ready(function () {
+	// 	// ajax to get current likes
+	// 	// let likes from server are 10
+	// 	// assign the current likes to variable
+	// 	like = 10;
+	// 	setLike(like);
+	// });
 
-	function setLikes(count) {
-		$(".totalLikes").text(count);
-	}
+	// $("body").on("click", ".likeBtn", function () {
+	// 	// ajax to post a current likes
+	// 	// in success add increment to likes
+	// 	like++;
+	// 	setLike(like);
+	// });
+
+	// let setLike = (count) => {
+	// 	$(".totalLikes").text(count);
+	// };
 
 	return (
 		<div className='App'>
@@ -171,8 +169,8 @@ function App() {
 			<ul>
 				{data.map((post) => {
 					return (
-						<div>
-							<li key={data._id}>{post.caption}</li>
+						<div key={data._id}>
+							<li>{post.caption}</li>
 							<button
 								onClick={(event) => {
 									handleDelete(data);
