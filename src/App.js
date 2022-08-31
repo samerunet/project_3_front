@@ -70,20 +70,25 @@ function App() {
 		});
 	}, []);
 
-	const handleUpdate = (Data) => {
+	const handleUpdate = (item) => {
 		axios
-			.patch(`https://young-oasis-10029.herokuapp.com/update/${Data._id}`, {
-				username: username ? username : Data.username,
-				image: image ? image : Data.image,
-				video: video ? video : Data.video,
-				comment: comment ? comment : Data.comment,
-				likes: likes ? likes : Data.likes,
-				caption: captions ? captions : Data.caption,
-			})
+			.put(
+				`https://young-oasis-10029.herokuapp.com/update/${item._id}`,
+
+				{
+					username: username ? username : item.username,
+					image: image ? image : item.image,
+					video: video ? video : item.video,
+					comment: comment ? comment : item.comment,
+					likes: likes ? likes : item.likes,
+					caption: captions ? captions : item.caption,
+				}
+			)
 			.then(() => {
 				axios
 					.get("https://young-oasis-10029.herokuapp.com/")
 					.then((response) => {
+						console.log(response);
 						setData(response.data);
 					});
 			});
@@ -181,7 +186,7 @@ function App() {
 							<div className='updateForm'>
 								<form
 									className='form-control'
-									onSubmit={(event) => {
+									onSubmit={(event, post) => {
 										handleUpdate(post);
 									}}
 								>
