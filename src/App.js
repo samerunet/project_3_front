@@ -187,6 +187,7 @@ function App() {
 								<form
 									className='form-control'
 									onSubmit={(event, post) => {
+										
 										handleUpdate(post);
 									}}
 								>
