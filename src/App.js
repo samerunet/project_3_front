@@ -70,24 +70,21 @@ function App() {
 		});
 	}, []);
 
-	const handleUpdate = (event, item) => {
-		event.preventDefault();
-		console.log(item);
-		console.log(username, image, video, comment, likes, captions);
+	const handleUpdate = (Data) => {
 		axios
-			.put(`https://young-oasis-10029.herokuapp.com/update/${item._id}`, {
-				username: username ? username : item.username,
-				image: image ? image : item.image,
-				video: video ? video : item.video,
-				comment: comment ? comment : item.comment,
-				likes: likes ? likes : item.likes,
-				caption: captions ? captions : item.caption,
+			.patch(`https://young-oasis-10029.herokuapp.com/update/${Data._id}`, {
+				username: username ? username : Data.username,
+				image: image ? image : Data.image,
+				video: video ? video : Data.video,
+				comment: comment ? comment : Data.comment,
+				likes: likes ? likes : Data.likes,
+				caption: captions ? captions : Data.caption,
 			})
 			.then(() => {
 				axios
 					.get("https://young-oasis-10029.herokuapp.com/")
 					.then((response) => {
-						//	setData(response.data);
+						setData(response.data);
 					});
 			});
 	};
