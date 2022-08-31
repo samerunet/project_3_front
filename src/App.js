@@ -106,6 +106,7 @@ function App() {
 
 	return (
 		<div className='App'>
+			<Header />
 			<div>
 				<br />
 				<br />
@@ -163,13 +164,14 @@ function App() {
 			<ul>
 				{data.map((post) => {
 					return (
-						<div key={post._id}>
-							<li>{post.username}</li>
+						<div className='postImage' key={post._id}>
+							{/* <li>{post.username}</li>
 							<li>{post.image}</li>
 							<li>{post.video}</li>
 							<li>{post.comment}</li>
 							<li>{post.likes}</li>
-							<li>{post.caption}</li>
+							<li>{post.caption}</li> */}
+							<img src={post.image} alt={post.username} />
 							<button
 								onClick={(event) => {
 									handleDelete(post);
@@ -181,6 +183,7 @@ function App() {
 					);
 				})}
 			</ul>
+			<Footer />
 		</div>
 	);
 }

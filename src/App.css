@@ -36,11 +36,20 @@
 		transform: rotate(360deg);
 	}
 }
-
+.header {
+	z-index: 400;
+	position: fixed;
+}
 .updateForm {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
+}
+
+.postImage img {
+	width: 50%;
+	height: 70%;
+	padding: 50px;
 }
