@@ -71,35 +71,18 @@ function App() {
 	}, []);
 
 	const handleUpdate = (item) => {
-		let potatoe = {
-			username: username,
-			image: image,
-			video: video,
-			comment: comment,
-			likes: likes,
-			caption: captions,
-		};
-		console.log(potatoe);
-
 		axios
 			.put(
 				`https://young-oasis-10029.herokuapp.com/update/${item._id}`,
-				potatoe
 
-				// {
-				// username: username,
-				// // ? username : item.username,
-				// image: image,
-				// //? image : item.image,
-				// video: video,
-				// // ? video : item.video,
-				// comment: comment,
-				// // ? comment : item.comment,
-				// likes: likes,
-				// // ? likes : item.likes,
-				// caption: captions,
-				// //? captions : item.caption,
-				// }
+				{
+					username: username ? username : item.username,
+					image: image ? image : item.image,
+					video: video ? video : item.video,
+					comment: comment ? comment : item.comment,
+					likes: likes ? likes : item.likes,
+					caption: captions ? captions : item.caption,
+				}
 			)
 			.then(() => {
 				axios
@@ -109,7 +92,6 @@ function App() {
 						setData(response.data);
 					});
 			});
-		// debugger;
 	};
 
 	const handleDelete = (dataDelete) => {
