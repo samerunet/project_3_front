@@ -72,18 +72,14 @@ function App() {
 
 	const handleUpdate = (item) => {
 		axios
-			.put(
-				`https://young-oasis-10029.herokuapp.com/update/${item._id}`,
-
-				{
-					username: username ? username : item.username,
-					image: image ? image : item.image,
-					video: video ? video : item.video,
-					comment: comment ? comment : item.comment,
-					likes: likes ? likes : item.likes,
-					caption: captions ? captions : item.caption,
-				}
-			)
+			.put(`https://young-oasis-10029.herokuapp.com/update/${item._id}`, {
+				username: username ? username : item.username,
+				image: image ? image : item.image,
+				video: video ? video : item.video,
+				comment: comment ? comment : item.comment,
+				likes: likes ? likes : item.likes,
+				caption: captions ? captions : item.caption,
+			})
 			.then(() => {
 				axios
 					.get("https://young-oasis-10029.herokuapp.com/")
@@ -186,7 +182,8 @@ function App() {
 							<div className='updateForm'>
 								<form
 									className='form-control'
-									onSubmit={(event, post) => {
+									onSubmit={(event) => {
+										event.preventDefault();
 										handleUpdate(post);
 									}}
 								>
