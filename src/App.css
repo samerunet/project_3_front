@@ -53,3 +53,12 @@
 	height: 70%;
 	padding: 50px;
 }
+
+.postImage {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.postImage li {
+	margin: 20px;
+}
