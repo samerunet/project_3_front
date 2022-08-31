@@ -87,10 +87,6 @@ function App() {
 						setData(response.data);
 					});
 			});
-<<<<<<< HEAD
-=======
-		//debugger;
->>>>>>> 4dcf904b8fd2d8403a861703d5247a09197aefa5
 	};
 
 	const handleDelete = (dataDelete) => {
