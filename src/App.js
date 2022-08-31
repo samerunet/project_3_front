@@ -16,10 +16,8 @@ function App() {
 	const [toggleEdit, setToggleEdit] = useState(false);
 	const [toggleNew, setToggleNew] = useState(false);
 
-	const cardToggle = () => {
-		{
-			toggleEdit ? setToggleEdit(false) : setToggleEdit(true);
-		}
+	const cardToggle = (post) => {
+		document.getElementById(`updateID${post._id}`).classList.toggle("hide");
 	};
 	const cardToggleNew = () => {
 		{
@@ -153,72 +151,72 @@ function App() {
 							</button>
 							<button
 								onClick={() => {
-									cardToggle();
+									cardToggle(post);
 								}}
 							>
 								toggle edit
 							</button>
-							{toggleEdit ? (
-								<div className='updateForm'>
-									<form
+							{/* {toggleEdit ? ( */}
+							<div id={`updateID${post._id}`} className='updateForm hide'>
+								<form
+									className='form-control'
+									onSubmit={(event) => {
+										event.preventDefault();
+										handleUpdate(post);
+									}}
+								>
+									username:{""}
+									<input
 										className='form-control'
-										onSubmit={(event) => {
-											event.preventDefault();
-											handleUpdate(post);
-										}}
-									>
-										username:{""}
-										<input
-											className='form-control'
-											placeholder={post.username}
-											type='text'
-											onChange={handleNewUser}
-										/>
-										<br />
-										image:{""}
-										<input
-											className='form-control'
-											placeholder={post.image}
-											type='text'
-											onChange={handlesetImage}
-										/>
-										<br />
-										video:{""}
-										<input
-											className='form-control'
-											placeholder={post.video}
-											type='text'
-											onChange={handlesetVideo}
-										/>
-										<br />
-										comment:{""}
-										<input
-											className='form-control'
-											placeholder={post.comment}
-											type='text'
-											onChange={handlesetComment}
-										/>
-										<br />
-										likes:{""}
-										<input
-											className='form-control'
-											type='number'
-											placeholder={post.likes}
-											onChange={handlesetLikes}
-										/>
-										<br />
-										caption:{""}
-										<input
-											className='form-control'
-											placeholder={post.caption}
-											type='text'
-											onChange={handlesetCaptions}
-										/>
-										<br />
-										<input type='submit' value='edit button' />
-									</form>
-								</div>
-							) : null}
+										placeholder={post.username}
+										type='text'
+										onChange={handleNewUser}
+									/>
+									<br />
+									image:{""}
+									<input
+										className='form-control'
+										placeholder={post.image}
+										type='text'
+										onChange={handlesetImage}
+									/>
+									<br />
+									video:{""}
+									<input
+										className='form-control'
+										placeholder={post.video}
+										type='text'
+										onChange={handlesetVideo}
+									/>
+									<br />
+									comment:{""}
+									<input
+										className='form-control'
+										placeholder={post.comment}
+										type='text'
+										onChange={handlesetComment}
+									/>
+									<br />
+									likes:{""}
+									<input
+										className='form-control'
+										type='number'
+										placeholder={post.likes}
+										onChange={handlesetLikes}
+									/>
+									<br />
+									caption:{""}
+									<input
+										className='form-control'
+										placeholder={post.caption}
+										type='text'
+										onChange={handlesetCaptions}
+									/>
+									<br />
+									<input type='submit' value='edit button' />
+								</form>
+							</div>
+							{/* ) : null} */}
 						</div>
 					);
 				})}
