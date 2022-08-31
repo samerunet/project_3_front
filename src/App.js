@@ -70,27 +70,46 @@ function App() {
 		});
 	}, []);
 
-	const handleUpdate = (event, item) => {
-		event.preventDefault();
-		console.log(item);
-		console.log(username, image, video, comment, likes, captions);
+	const handleUpdate = (item) => {
+		let potatoe = {
+			username: username,
+			image: image,
+			video: video,
+			comment: comment,
+			likes: likes,
+			caption: captions,
+		};
+		console.log(potatoe);
+
 		axios
-			.put(`https://young-oasis-10029.herokuapp.com/update/${item._id}`, {
-				username: username ? username : item.username,
-				image: image ? image : item.image,
-				video: video ? video : item.video,
-				comment: comment ? comment : item.comment,
-				likes: likes ? likes : item.likes,
-				caption: captions ? captions : item.caption,
-			})
+			.put(
+				`https://young-oasis-10029.herokuapp.com/update/${item._id}`,
+				potatoe
+
+				// {
+				// username: username,
+				// // ? username : item.username,
+				// image: image,
+				// //? image : item.image,
+				// video: video,
+				// // ? video : item.video,
+				// comment: comment,
+				// // ? comment : item.comment,
+				// likes: likes,
+				// // ? likes : item.likes,
+				// caption: captions,
+				// //? captions : item.caption,
+				// }
+			)
 			.then(() => {
 				axios
 					.get("https://young-oasis-10029.herokuapp.com/")
 					.then((response) => {
-						//	setData(response.data);
+						console.log(response);
+						setData(response.data);
 					});
 			});
-		//debugger;
+		// debugger;
 	};
 
 	const handleDelete = (dataDelete) => {
@@ -185,7 +204,7 @@ function App() {
 							<div className='updateForm'>
 								<form
 									className='form-control'
-									onSubmit={(event) => {
+									onSubmit={(event, post) => {
 										handleUpdate(post);
 									}}
 								>
