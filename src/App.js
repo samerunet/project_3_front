@@ -87,7 +87,7 @@ function App() {
 						setData(response.data);
 					});
 			});
-		debugger;
+		Data.preventDefault();
 	};
 
 	const handleDelete = (dataDelete) => {
@@ -182,7 +182,7 @@ function App() {
 							<div className='updateForm'>
 								<form
 									className='form-control'
-									onSubmit={() => {
+									onSubmit={(event) => {
 										handleUpdate(post);
 									}}
 								>
