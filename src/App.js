@@ -72,7 +72,7 @@ function App() {
 
 	const handleUpdate = (Data) => {
 		axios
-			.put(`https://young-oasis-10029.herokuapp.com/update/${Data._id}`, {
+			.patch(`https://young-oasis-10029.herokuapp.com/update/${Data._id}`, {
 				username: username ? username : Data.username,
 				image: image ? image : Data.image,
 				video: video ? video : Data.video,
@@ -87,6 +87,10 @@ function App() {
 						setData(response.data);
 					});
 			});
+<<<<<<< HEAD
+=======
+		//debugger;
+>>>>>>> 4dcf904b8fd2d8403a861703d5247a09197aefa5
 	};
 
 	const handleDelete = (dataDelete) => {
@@ -105,7 +109,6 @@ function App() {
 
 	return (
 		<div className='App'>
-			<Header />
 			<div>
 				<br />
 				<br />
@@ -177,70 +180,10 @@ function App() {
 							>
 								Delete
 							</button>
-
-							<div className='updateForm'>
-								<form
-									className='form-control'
-									onSubmit={(event) => {
-										handleUpdate(post);
-									}}
-								>
-									username:{""}
-									<input
-										className='form-control'
-										placeholder={post.username}
-										type='text'
-										onChange={handleNewUser}
-									/>
-									<br />
-									image:{""}
-									<input
-										className='form-control'
-										placeholder={post.image}
-										type='text'
-										onChange={handlesetImage}
-									/>
-									<br />
-									video:{""}
-									<input
-										className='form-control'
-										placeholder={post.video}
-										type='text'
-										onChange={handlesetVideo}
-									/>
-									<br />
-									comment:{""}
-									<input
-										className='form-control'
-										placeholder={post.comment}
-										type='text'
-										onChange={handlesetComment}
-									/>
-									<br />
-									likes:{""}
-									<input
-										className='form-control'
-										type='number'
-										placeholder={post.likes}
-										onChange={handlesetLikes}
-									/>
-									<br />
-									caption:{""}
-									<input
-										className='form-control'
-										placeholder={post.caption}
-										type='text'
-										onChange={handlesetCaptions}
-									/>
-									<br />
-									<input type='submit' value='edit button' />
-								</form>
-							</div>
 						</div>
 					);
 				})}
 			</ul>
-			<Footer />
 		</div>
 	);
 }
