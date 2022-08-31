@@ -90,7 +90,6 @@ function App() {
 						//	setData(response.data);
 					});
 			});
-		//debugger;
 	};
 
 	const handleDelete = (dataDelete) => {
