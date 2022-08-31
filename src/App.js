@@ -87,7 +87,6 @@ function App() {
 						setData(response.data);
 					});
 			});
-		Data.preventDefault();
 	};
 
 	const handleDelete = (dataDelete) => {
