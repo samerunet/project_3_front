@@ -1,6 +1,6 @@
 const Footer = (props) => {
 	return (
-		<div className='nav nav-masthead justify-content-center'>
+		<div class='nav nav-masthead justify-content-center'>
 			<footer class='mt-auto text-white-50'>
 				<p>FINSTAGRAM</p>
 
