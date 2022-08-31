@@ -72,7 +72,7 @@ function App() {
 
 	const handleUpdate = (Data) => {
 		axios
-			.put(`https://young-oasis-10029.herokuapp.com/update/${Data._id}`, {
+			.patch(`https://young-oasis-10029.herokuapp.com/update/${Data._id}`, {
 				username: username ? username : Data.username,
 				image: image ? image : Data.image,
 				video: video ? video : Data.video,
@@ -87,7 +87,7 @@ function App() {
 						setData(response.data);
 					});
 			});
-		Data.preventDefault();
+		//debugger;
 	};
 
 	const handleDelete = (dataDelete) => {
@@ -241,7 +241,7 @@ function App() {
 					);
 				})}
 			</ul>
-			<Footer />
+		
 		</div>
 	);
 }
