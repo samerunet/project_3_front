@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Header from "./components/Header.js";
 import Footer from "./components/Footer.js";
+import Edit from "./components/edit.js";
 import axios from "axios";
 
 function App() {
@@ -12,14 +13,19 @@ function App() {
 	const [likes, setLikes] = useState(0);
 	const [captions, setCaptions] = useState("");
 	const [data, setData] = useState([]);
-	const [toggleEdit, setToggleEdit] = useState(true);
+	const [toggleEdit, setToggleEdit] = useState(false);
+	const [toggleNew, setToggleNew] = useState(false);
 
 	const cardToggle = () => {
 		{
 			toggleEdit ? setToggleEdit(false) : setToggleEdit(true);
 		}
 	};
-
+	const cardToggleNew = () => {
+		{
+			toggleNew ? setToggleNew(false) : setToggleNew(true);
+		}
+	};
 	const handleNewUser = (event) => {
 		setUsername(event.target.value);
 	};
@@ -107,70 +113,36 @@ function App() {
 	return (
 		<div className='App'>
 			<Header />
-			<div>
-				<br />
-				<br />
-				<form className='form-control' onSubmit={handleNew}>
-					username:
-					<input
-						className='form-control'
-						placeholder='Username'
-						type='text'
-						onChange={handleNewUser}
-					/>
-					<br />
-					image:
-					<input
-						className='form-control'
-						placeholder='Insert Image'
-						type='text'
-						onChange={handlesetImage}
-					/>
-					<br />
-					video:
-					<input
-						className='form-control'
-						placeholder='Insert Video'
-						type='text'
-						onChange={handlesetVideo}
-					/>
-					<br />
-					comment:
-					<input
-						className='form-control'
-						placeholder='Comment'
-						type='text'
-						onChange={handlesetComment}
-					/>
-					<br />
-					likes:
-					<input
-						className='form-control'
-						type='number'
-						onChange={handlesetLikes}
-					/>
-					<br />
-					caption:
-					<input
-						className='form-control'
-						type='text'
-						onChange={handlesetCaptions}
-					/>
-					<br />
-					<input type='submit' value='Add new post' />
-				</form>
-			</div>
+			<button
+				onClick={() => {
+					cardToggleNew();
+				}}
+			>
+				{" "}
+				Add new toggle
+			</button>
+			{toggleNew ? (
+				<Edit
+					handleNew={handleNew}
+					handleNewUser={handleNewUser}
+					handlesetImage={handlesetImage}
+					handlesetVideo={handlesetVideo}
+					handlesetLikes={handlesetLikes}
+					handlesetComment={handlesetComment}
+					handlesetCaptions={handlesetCaptions}
+				/>
+			) : null}
 			<h4>created branch </h4>
 			<ul>
 				{data.map((post) => {
 					return (
 						<div className='postImage' key={post._id}>
-							<li>{post.username}</li>
+							{/* <li>{post.username}</li>
 							<li>{post.image}</li>
 							<li>{post.video}</li>
 							<li>{post.comment}</li>
 							<li>{post.likes}</li>
-							<li>{post.caption}</li>
+							<li>{post.caption}</li> */}
 							<img src={post.image} alt={post.username} />
 							<button
 								onClick={(event) => {
@@ -179,65 +151,74 @@ function App() {
 							>
 								Delete
 							</button>
-							<div className='updateForm'>
-								<form
-									className='form-control'
-									onSubmit={(event) => {
-										event.preventDefault();
-										handleUpdate(post);
-									}}
-								>
-									username:{""}
-									<input
+							<button
+								onClick={() => {
+									cardToggle();
+								}}
+							>
+								toggle edit
+							</button>
+							{toggleEdit ? (
+								<div className='updateForm'>
+									<form
 										className='form-control'
-										placeholder={post.username}
-										type='text'
-										onChange={handleNewUser}
-									/>
-									<br />
-									image:{""}
-									<input
-										className='form-control'
-										placeholder={post.image}
-										type='text'
-										onChange={handlesetImage}
-									/>
-									<br />
-									video:{""}
-									<input
-										className='form-control'
-										placeholder={post.video}
-										type='text'
-										onChange={handlesetVideo}
-									/>
-									<br />
-									comment:{""}
-									<input
-										className='form-control'
-										placeholder={post.comment}
-										type='text'
-										onChange={handlesetComment}
-									/>
-									<br />
-									likes:{""}
-									<input
-										className='form-control'
-										type='number'
-										placeholder={post.likes}
-										onChange={handlesetLikes}
-									/>
-									<br />
-									caption:{""}
-									<input
-										className='form-control'
-										placeholder={post.caption}
-										type='text'
-										onChange={handlesetCaptions}
-									/>
-									<br />
-									<input type='submit' value='edit button' />
-								</form>
-							</div>
+										onSubmit={(event) => {
+											event.preventDefault();
+											handleUpdate(post);
+										}}
+									>
+										username:{""}
+										<input
+											className='form-control'
+											placeholder={post.username}
+											type='text'
+											onChange={handleNewUser}
+										/>
+										<br />
+										image:{""}
+										<input
+											className='form-control'
+											placeholder={post.image}
+											type='text'
+											onChange={handlesetImage}
+										/>
+										<br />
+										video:{""}
+										<input
+											className='form-control'
+											placeholder={post.video}
+											type='text'
+											onChange={handlesetVideo}
+										/>
+										<br />
+										comment:{""}
+										<input
+											className='form-control'
+											placeholder={post.comment}
+											type='text'
+											onChange={handlesetComment}
+										/>
+										<br />
+										likes:{""}
+										<input
+											className='form-control'
+											type='number'
+											placeholder={post.likes}
+											onChange={handlesetLikes}
+										/>
+										<br />
+										caption:{""}
+										<input
+											className='form-control'
+											placeholder={post.caption}
+											type='text'
+											onChange={handlesetCaptions}
+										/>
+										<br />
+										<input type='submit' value='edit button' />
+									</form>
+								</div>
+							) : null}
 						</div>
 					);
 				})}
