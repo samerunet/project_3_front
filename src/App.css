@@ -87,6 +87,29 @@
 	padding: 5px;
 }
 
+.editDelete {
+	width: 100px;
+}
+.editDelete p {
+	padding: 10px;
+	cursor: pointer;
+}
+
+.interactions {
+	display: flex;
+	flex-direction: row;
+	width: 80%;
+	height: 100px;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.caption {
+	margin-top: 50px;
+	margin-left: -55%;
+}
+
 body {
 	font-family: "Iceland", Helvetica;
 }
@@ -158,6 +181,11 @@ body {
 body {
 	text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
 	box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+	background-image: linear-gradient(
+		to right,
+		rgba(210, 194, 194, 0),
+		rgb(166, 102, 102)
+	);
 }
 
 .cover-container {
