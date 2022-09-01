@@ -23,7 +23,7 @@ export default function Post({
 				<p>{post.caption}</p>
 			</div>
 			<img src={post.image} alt={post.username} />
-
+			<video src={post.video} playsinline autoplay loop />
 			<div className='interactions'>
 				<div className='likeBox'>
 					{" "}
