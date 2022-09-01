@@ -127,7 +127,8 @@ function App() {
 		<div className='App'>
 			<Header />
 			<Story data={data} />
-			<button
+
+					<button className='nav-link fw-bold py-1 px-0 nav nav-masthead float-md'
 				onClick={() => {
 					cardToggleNew();
 				}}
@@ -146,6 +147,8 @@ function App() {
 					handlesetCaptions={handlesetCaptions}
 				/>
 			) : null}
+
+			
 
 			<ul>
 				{data.map((post) => {
