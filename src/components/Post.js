@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Edit from "../components/Edit.js";
+import Edit from "./Edit.js";
 export default function Post({
 	post,
 	handleNewUser,
