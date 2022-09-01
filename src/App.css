@@ -276,8 +276,8 @@ body {
 .card {
     height: 60px;
     width: 220px;
-    background:rgb(225, 225, 225);
-    color: black;
+    background: rgb(225, 225, 225);
+    
     padding: 10px;
     border-radius: 5px;
     overflow: hidden;
