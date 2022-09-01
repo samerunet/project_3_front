@@ -64,6 +64,8 @@ export default function Post({
 						likesIncrease={likesIncrease}
 						handleDelete={handleDelete}
 						handleUpdate={handleUpdate}
+						cardToggle={cardToggle}
+						editFunction={editFunction}
 					/>
 				</div>
 			</div>

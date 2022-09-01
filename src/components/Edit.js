@@ -11,17 +11,12 @@ export default function edit({
 	likesIncrease,
 	handleDelete,
 	handleUpdate,
+	editFunction,
+	cardToggle,
 }) {
-	// eslint-disable-next-line react-hooks/rules-of-hooks
-	const [ButtonToggle, setEditButtonToggle] = useState(false);
-
-	const Toggle = (post) => {
-		ButtonToggle ? setEditButtonToggle(false) : setEditButtonToggle(true);
-	};
 	return (
 		<>
 			<div className='EditButtonClicked'>
-				<button onClick={Toggle}>close</button>
 				<form
 					className='form-control'
 					onSubmit={(event) => {
@@ -78,6 +73,13 @@ export default function edit({
 					/>
 					<br />
 					<input type='submit' value='edit button' />
+					<button
+						onClick={() => {
+							cardToggle(post);
+						}}
+					>
+						close
+					</button>
 				</form>
 			</div>
 		</>
