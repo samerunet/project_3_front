@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+
 export default function Post({
 	post,
 	handleNewUser,
@@ -19,13 +20,6 @@ export default function Post({
 	};
 	return (
 		<div className='postImage' key={post._id}>
-			<button
-				onClick={() => {
-					likesIncrease(post);
-				}}
-			>
-				{post.likes}
-			</button>
 			<img src={post.image} alt={post.username} />
 			<button
 				onClick={(event) => {
@@ -104,7 +98,13 @@ export default function Post({
 					<input type='submit' value='edit button' />
 				</form>
 			</div>
-			{/* ) : null} */}
+			<button
+				onClick={() => {
+					likesIncrease(post);
+				}}
+			>
+				{post.likes}
+			</button>
 		</div>
 	);
 }
