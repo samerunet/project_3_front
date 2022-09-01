@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 export default function Story({ data }) {
 	return (
 		<div className='storyContainer'>
-			<div classname='storyNothing'></div>
+			<div classname='story  '>
+				<p className='adding fa fa-plus-circle'></p>
+			</div>
 			{data.map((item) => {
 				return (
 					<div className='story'>

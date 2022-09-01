@@ -130,13 +130,13 @@
 	position: absolute;
 	margin-top: 5%;
 	justify-content: space-evenly;
-	background-color: rgb(209, 24, 24);
-	height: 100px;
+	background-color: rgb(235, 225, 225);
+	height: 130px;
 }
 .story {
 	display: flex;
 	flex-direction: column;
-	font-size: 10px;
+	font-size: 15px;
 	padding: 15px;
 }
 
@@ -144,13 +144,15 @@
 	padding: 10px;
 }
 .story img {
-	width: 55px;
-	height: 55px;
+	width: 75px;
+	height: 75px;
 	padding: 0px;
-	border-radius: 30px;
+	border-radius: 50%;
 	box-shadow: 2px 2px 0px 2px rgba(56, 56, 58, 0.8);
 }
-
+.adding {
+	font-size: 40px;
+}
 ul {
 	margin-top: 20%;
 }
