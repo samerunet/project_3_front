@@ -2,7 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Header from "./components/Header.js";
 import Footer from "./components/Footer.js";
-import Edit from "./components/New.js";
+import New from "./components/New.js";
 import Post from "./components/Post.js";
 import Story from "./components/Story.js";
 import axios from "axios";
@@ -125,31 +125,18 @@ function App() {
 
 	return (
 		<div className='App'>
-			<Header />
+			<Header
+				handleNew={handleNew}
+				handleNewUser={handleNewUser}
+				handlesetImage={handlesetImage}
+				handlesetVideo={handlesetVideo}
+				handlesetLikes={handlesetLikes}
+				handlesetComment={handlesetComment}
+				handlesetCaptions={handlesetCaptions}
+				cardToggleNew={cardToggleNew}
+				toggleNew={toggleNew}
+			/>
 			<Story data={data} />
-
-					<button
-				onClick={() => {
-					cardToggleNew();
-				}}
-			>
-				{" "}
-				Add new toggle
-			</button>
-			{toggleNew ? (
-				<Edit
-					handleNew={handleNew}
-					handleNewUser={handleNewUser}
-					handlesetImage={handlesetImage}
-					handlesetVideo={handlesetVideo}
-					handlesetLikes={handlesetLikes}
-					handlesetComment={handlesetComment}
-					handlesetCaptions={handlesetCaptions}
-				/>
-			) : null}
-
-			
-
 			<ul>
 				{data.map((post) => {
 					return (
