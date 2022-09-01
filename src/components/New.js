@@ -11,7 +11,7 @@ const Newform = ({
 		<div>
 			<br />
 			<br />
-			<form className='form-control' onSubmit={handleNew}>
+			<form className='form-controlNew' onSubmit={handleNew}>
 				username:
 				<input
 					className='form-control'
