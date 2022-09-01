@@ -73,6 +73,26 @@ const Header = ({
 							{" "}
 							<p>Frontend Git</p>
 						</a>
+						<a
+							className='nav-link fw-bold py-1 px-0'
+							href='https://www.linkedin.com/in/jesus-eduardo-prado/'
+							target='_blank'
+							type='button'
+							rel='noreferrer'
+						>
+							{" "}
+							<p>Eduardo Prado</p>
+						</a>
+						<a
+							className='nav-link fw-bold py-1 px-0'
+							href='https://www.linkedin.com/in/sami-sipahi/'
+							target='_blank'
+							type='button'
+							rel='noreferrer'
+						>
+							{" "}
+							<p>Sami Sipahi</p>
+						</a>
 					</nav>
 				</div>
 			</header>
