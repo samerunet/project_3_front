@@ -148,8 +148,8 @@
 	position: absolute;
 	margin-top: 5%;
 	justify-content: space-evenly;
-	background-color: rgb(235, 225, 225);
-	height: 130px;
+	background-color: rgb(187, 184, 184);
+	height: 150px;
 }
 .story {
 	display: flex;
