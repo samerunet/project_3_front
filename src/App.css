@@ -49,9 +49,9 @@
 }
 
 .postImage img {
-	width: 80%;
-	height: 70%;
-	padding: 50px;
+	width: 100%;
+	height: 90%;
+	padding: 10px;
 	justify-content: center;
 }
 
@@ -64,6 +64,8 @@
 	margin: 50px;
 	align-items: center;
 	margin-left: 20%;
+	background-color: #fff;
+	box-shadow: 2px 2px 2px 5px rgba(56, 56, 58, 0.2);
 }
 
 .postImage li {
@@ -110,6 +112,17 @@
 	margin-left: -55%;
 }
 
+.comments {
+	margin-left: -20%;
+	margin-top: -10%;
+}
+
+.EditButtonClicked {
+	position: absolute;
+	width: 80%;
+	margin-top: -70%;
+	margin-left: -50%;
+}
 body {
 	font-family: "Iceland", Helvetica;
 }
@@ -183,8 +196,8 @@ body {
 	box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
 	background-image: linear-gradient(
 		to right,
-		rgba(210, 194, 194, 0),
-		rgb(166, 102, 102)
+		rgba(122, 119, 119, 0.433),
+		rgb(136, 126, 126)
 	);
 }
 
@@ -196,6 +209,18 @@ body {
    * Header
    */
 
+/* .nav {
+	position: fixed;
+	margin-left: 40%;
+}
+.nav a {
+	padding: 20px;
+	margin: 20px;
+} */
+
+.nav-masthead {
+	margin-left: -20px;
+}
 .nav-masthead .nav-link {
 	color: black;
 	border-bottom: 0.25rem solid transparent;

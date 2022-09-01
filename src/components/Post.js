@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import Edit from "../components/Edit.js";
 export default function Post({
 	post,
 	handleNewUser,
@@ -23,9 +23,7 @@ export default function Post({
 				<p>{post.caption}</p>
 			</div>
 			<img src={post.image} alt={post.username} />
-			<div className='comments'>
-				<p>{post.comment}</p>
-			</div>
+
 			<div className='interactions'>
 				<div className='likeBox'>
 					{" "}
@@ -55,64 +53,22 @@ export default function Post({
 					id={`updateID${post._id}`}
 					className={`updateForm ${editFunction ? "" : "hide"}`}
 				>
-					<form
-						className='form-control'
-						onSubmit={(event) => {
-							event.preventDefault();
-							handleUpdate(post);
-						}}
-					>
-						username:{""}
-						<input
-							className='form-control'
-							placeholder={post.username}
-							type='text'
-							onChange={handleNewUser}
-						/>
-						<br />
-						image:{""}
-						<input
-							className='form-control'
-							placeholder={post.image}
-							type='text'
-							onChange={handlesetImage}
-						/>
-						<br />
-						video:{""}
-						<input
-							className='form-control'
-							placeholder={post.video}
-							type='text'
-							onChange={handlesetVideo}
-						/>
-						<br />
-						comment:{""}
-						<input
-							className='form-control'
-							placeholder={post.comment}
-							type='text'
-							onChange={handlesetComment}
-						/>
-						<br />
-						likes:{""}
-						<input
-							className='form-control'
-							type='number'
-							placeholder={post.likes}
-							onChange={handlesetLikes}
-						/>
-						<br />
-						caption:{""}
-						<input
-							className='form-control'
-							placeholder={post.caption}
-							type='text'
-							onChange={handlesetCaptions}
-						/>
-						<br />
-						<input type='submit' value='edit button' />
-					</form>
+					<Edit
+						post={post}
+						handleNewUser={handleNewUser}
+						handlesetImage={handlesetImage}
+						handlesetVideo={handlesetVideo}
+						handlesetLikes={handlesetLikes}
+						handlesetComment={handlesetComment}
+						handlesetCaptions={handlesetCaptions}
+						likesIncrease={likesIncrease}
+						handleDelete={handleDelete}
+						handleUpdate={handleUpdate}
+					/>
 				</div>
+			</div>
+			<div className='comments'>
+				<p>{post.comment}</p>
 			</div>
 		</div>
 	);

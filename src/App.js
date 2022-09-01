@@ -4,6 +4,7 @@ import Header from "./components/Header.js";
 import Footer from "./components/Footer.js";
 import Edit from "./components/New.js";
 import Post from "./components/Post.js";
+import Story from "./components/Story.js";
 import axios from "axios";
 
 function App() {
@@ -125,6 +126,7 @@ function App() {
 	return (
 		<div className='App'>
 			<Header />
+			<Story data={data} />
 			<button
 				onClick={() => {
 					cardToggleNew();
@@ -144,7 +146,7 @@ function App() {
 					handlesetCaptions={handlesetCaptions}
 				/>
 			) : null}
-			<h4>created branch </h4>
+
 			<ul>
 				{data.map((post) => {
 					return (
