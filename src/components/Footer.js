@@ -1,13 +1,31 @@
 const Footer = (props) => {
 	return (
-		<div class='nav nav-masthead justify-content-center'>
+		<div class='nav nav-masthead justify-content-center float-md'>
 			<footer class='mt-auto text-white-50'>
-				<p>FINSTAGRAM</p>
+			<p>FINSTAGRAM</p>
+				<a
+							className='nav-link  float-md-end mt-auto text-white-50 '
+							href='https://www.linkedin.com/in/sami-sipahi/'
+							target='_blank'
+							type='button'
+							rel='noreferrer'
+						>
+							{" "}
+							<p>SAMI SIPAHI</p>
+						</a>
 
-                <p>
-                    <div class="fb-like" data-href="https://www.facebook.com/generalassembly/" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
-                </p>
-
+				<a
+							className='nav-link  float-md-start mt-auto text-white-50 '
+							href='https://www.linkedin.com/in/jesus-eduardo-prado/'
+							target='_blank'
+							type='button'
+							rel='noreferrer'
+						>
+							{" "}
+							<p>EDUARDO PRADO</p>
+						</a>
+						
+				
 			</footer>
 		</div>
 	);

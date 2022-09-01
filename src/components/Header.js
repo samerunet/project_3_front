@@ -17,11 +17,7 @@ const Header = ({
 			<header className='mb-auto'>
 				<div>
 					<h2 className='nav nav-masthead justify-content-center float-md'>
-						<div className='nav nav-masthead  float-md' class='card'>
-							<div className='nav nav-masthead  float-md' class='text'>
 								FINSTAGRAM
-							</div>
-						</div>
 					</h2>
 					<nav className='nav nav-masthead justify-content-center float-md'>
 						<a

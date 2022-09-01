@@ -254,6 +254,11 @@ body {
 nav p {
 	cursor: pointer;
 }
+
+footer a {
+	cursor: pointer;
+}
+
 .nav-masthead {
 	margin-left: -20px;
 }
@@ -314,7 +319,7 @@ nav p {
 	top: -120px;
 	position: relative;
 	background: linear-gradient(black, rgb(184, 184, 184));
-	animation: animate 6s linear infinite;
+	animation: animate 7s linear infinite;
 }
 
 @keyframes animate {
@@ -333,5 +338,15 @@ nav p {
 	inset: 3px;
 	border-radius: 5px;
 }
+
+.footer-column {
+	width: 100%;
+	float: left;
+  } 
+
+  .footer-column1 {
+	width: 100%;
+	float: left;
+  } 
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
