@@ -8,6 +8,7 @@ import axios from "axios";
 
 function App() {
 	const [username, setUsername] = useState("");
+
 	const [image, setImage] = useState("");
 	const [video, setVideo] = useState("");
 	const [comment, setComment] = useState("");

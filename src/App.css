@@ -76,6 +76,16 @@
 .hide {
 	display: none;
 }
+.likeBox {
+	display: flex;
+	flex-direction: row;
+	padding: 10px;
+	justify-content: space-around;
+}
+.like {
+	cursor: pointer;
+	padding: 5px;
+}
 
 body {
 	font-family: "Iceland", Helvetica;

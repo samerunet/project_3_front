@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 export default function Post({
 	post,
 	handleNewUser,
@@ -98,13 +97,16 @@ export default function Post({
 					<input type='submit' value='edit button' />
 				</form>
 			</div>
-			<button
-				onClick={() => {
-					likesIncrease(post);
-				}}
-			>
-				{post.likes}
-			</button>
+			<div className='likeBox'>
+				{" "}
+				<p
+					className='like fa fa-heart'
+					onClick={() => {
+						likesIncrease(post);
+					}}
+				></p>
+				<p>{post.likes}</p>{" "}
+			</div>
 		</div>
 	);
 }
