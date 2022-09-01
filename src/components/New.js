@@ -1,15 +1,23 @@
-const Newform = (props) => {
+const Newform = ({
+	handleNew,
+	handleNewUser,
+	handlesetImage,
+	handlesetVideo,
+	handlesetLikes,
+	handlesetComment,
+	handlesetCaptions,
+}) => {
 	return (
 		<div>
 			<br />
 			<br />
-			<form className='form-control' onSubmit={props.handleNew}>
+			<form className='form-control' onSubmit={handleNew}>
 				username:
 				<input
 					className='form-control'
 					placeholder='Username'
 					type='text'
-					onChange={props.handleNewUser}
+					onChange={handleNewUser}
 				/>
 				<br />
 				image:
@@ -17,7 +25,7 @@ const Newform = (props) => {
 					className='form-control'
 					placeholder='Insert Image'
 					type='text'
-					onChange={props.handlesetImage}
+					onChange={handlesetImage}
 				/>
 				<br />
 				video:
@@ -25,7 +33,7 @@ const Newform = (props) => {
 					className='form-control'
 					placeholder='Insert Video'
 					type='text'
-					onChange={props.handlesetVideo}
+					onChange={handlesetVideo}
 				/>
 				<br />
 				comment:
@@ -33,21 +41,21 @@ const Newform = (props) => {
 					className='form-control'
 					placeholder='Comment'
 					type='text'
-					onChange={props.handlesetComment}
+					onChange={handlesetComment}
 				/>
 				<br />
 				likes:
 				<input
 					className='form-control'
 					type='number'
-					onChange={props.handlesetLikes}
+					onChange={handlesetLikes}
 				/>
 				<br />
 				caption:
 				<input
 					className='form-control'
 					type='text'
-					onChange={props.handlesetCaptions}
+					onChange={handlesetCaptions}
 				/>
 				<br />
 				<input type='submit' value='Add new post' />

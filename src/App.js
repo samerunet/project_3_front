@@ -2,7 +2,8 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Header from "./components/Header.js";
 import Footer from "./components/Footer.js";
-import Edit from "./components/edit.js";
+import Edit from "./components/New.js";
+import Post from "./components/Post.js";
 import axios from "axios";
 
 function App() {
@@ -16,9 +17,6 @@ function App() {
 	const [toggleEdit, setToggleEdit] = useState(false);
 	const [toggleNew, setToggleNew] = useState(false);
 
-	const cardToggle = (post) => {
-		document.getElementById(`updateID${post._id}`).classList.toggle("hide");
-	};
 	const cardToggleNew = () => {
 		{
 			toggleNew ? setToggleNew(false) : setToggleNew(true);
@@ -73,6 +71,21 @@ function App() {
 			setData(response.data);
 		});
 	}, []);
+
+	const likesIncrease = (post) => {
+		//id of the current post that you are clicking
+		const postId = post._id;
+		const newData = data.map((item) => {
+			if (item._id === postId) {
+				return { ...item, likes: item.likes + 1 };
+			}
+			return item;
+		});
+		setData(newData);
+		axios.put(`https://young-oasis-10029.herokuapp.com/update/${post._id}`, {
+			likes: post.likes + 1,
+		});
+	};
 
 	const handleUpdate = (item) => {
 		axios
@@ -134,90 +147,18 @@ function App() {
 			<ul>
 				{data.map((post) => {
 					return (
-						<div className='postImage' key={post._id}>
-							{/* <li>{post.username}</li>
-							<li>{post.image}</li>
-							<li>{post.video}</li>
-							<li>{post.comment}</li>
-							<li>{post.likes}</li>
-							<li>{post.caption}</li> */}
-							<img src={post.image} alt={post.username} />
-							<button
-								onClick={(event) => {
-									handleDelete(post);
-								}}
-							>
-								Delete
-							</button>
-							<button
-								onClick={() => {
-									cardToggle(post);
-								}}
-							>
-								toggle edit
-							</button>
-							{/* {toggleEdit ? ( */}
-							<div id={`updateID${post._id}`} className='updateForm hide'>
-								<form
-									className='form-control'
-									onSubmit={(event) => {
-										event.preventDefault();
-										handleUpdate(post);
-									}}
-								>
-									username:{""}
-									<input
-										className='form-control'
-										placeholder={post.username}
-										type='text'
-										onChange={handleNewUser}
-									/>
-									<br />
-									image:{""}
-									<input
-										className='form-control'
-										placeholder={post.image}
-										type='text'
-										onChange={handlesetImage}
-									/>
-									<br />
-									video:{""}
-									<input
-										className='form-control'
-										placeholder={post.video}
-										type='text'
-										onChange={handlesetVideo}
-									/>
-									<br />
-									comment:{""}
-									<input
-										className='form-control'
-										placeholder={post.comment}
-										type='text'
-										onChange={handlesetComment}
-									/>
-									<br />
-									likes:{""}
-									<input
-										className='form-control'
-										type='number'
-										placeholder={post.likes}
-										onChange={handlesetLikes}
-									/>
-									<br />
-									caption:{""}
-									<input
-										className='form-control'
-										placeholder={post.caption}
-										type='text'
-										onChange={handlesetCaptions}
-									/>
-									<br />
-									<input type='submit' value='edit button' />
-								</form>
-							</div>
-							{/* ) : null} */}
-						</div>
+						<Post
+							post={post}
+							handleNewUser={handleNewUser}
+							handlesetImage={handlesetImage}
+							handlesetVideo={handlesetVideo}
+							handlesetLikes={handlesetLikes}
+							handlesetComment={handlesetComment}
+							handlesetCaptions={handlesetCaptions}
+							likesIncrease={likesIncrease}
+							handleDelete={handleDelete}
+							handleUpdate={handleUpdate}
+						/>
 					);
 				})}
 			</ul>
