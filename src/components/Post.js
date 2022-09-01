@@ -20,10 +20,10 @@ export default function Post({
 	return (
 		<div className='postImage' key={post._id}>
 			<div className='caption'>
+				<p>{post.username}</p>
 				<p>{post.caption}</p>
 			</div>
 			<img src={post.image} alt={post.username} />
-
 			<div className='interactions'>
 				<div className='likeBox'>
 					{" "}

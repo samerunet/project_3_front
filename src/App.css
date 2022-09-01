@@ -52,7 +52,6 @@
 	width: 100%;
 	height: 90%;
 	padding: 10px;
-	margin-bottom: 50px;
 	justify-content: center;
 }
 
@@ -82,7 +81,7 @@
 .likeBox {
 	display: flex;
 	flex-direction: row;
-	margin-top: -20%;
+	margin-top: 1%;
 	justify-content: space-around;
 }
 
@@ -98,7 +97,7 @@
 
 .editDelete {
 	width: 100px;
-	margin-top: -20%;
+	margin-top: 1%;
 
 	justify-content: space-around;
 }
@@ -120,8 +119,6 @@
 
 .caption {
 	font-size: 30px;
-	margin-top: 0px;
-	margin-left: -0%;
 	width: 100%;
 	border-width: 5px;
 	border-style: double;
@@ -133,7 +130,7 @@
 	width: 100%;
 	border-width: 5px;
 	border-style: double;
-	padding: 20%;
+	padding: 10%;
 }
 
 .EditButtonClicked {
