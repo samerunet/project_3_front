@@ -80,13 +80,14 @@
 	display: none;
 }
 .likeBox {
-	display: flex;
+	display:flex;
 	flex-direction: row;
 	margin-top: 4.5%;
 	padding: 4px 4px 0px 4px ;
 	justify-content: space-around;
 	border-width: 5px;
 	border-style:dashed;
+	
 }
 .like {
 	cursor: pointer;
