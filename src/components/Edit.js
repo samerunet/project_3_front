@@ -72,8 +72,8 @@ export default function edit({
 						onChange={handlesetCaptions}
 					/>
 					<br />
-					<input type='submit' value='Submit' />
-					<button
+					<input className='btn btn-primary 'type='submit' value='Submit' />
+					<button className='btn btn-danger'
 						onClick={() => {
 							cardToggle(post);
 						}}

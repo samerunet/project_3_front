@@ -143,10 +143,10 @@
 	display: flex;
 	width: 100%;
 	flex-direction: row;
-	position: absolute;
+	position: relative;
 	margin-top: 5%;
 	justify-content: space-evenly;
-	background-color: rgb(187, 184, 184);
+	background-color: rgba(146, 146, 146, 0.493);
 	height: 150px;
 }
 .story {
@@ -171,7 +171,7 @@
 	font-size: 40px;
 }
 ul {
-	margin-top: 30%;
+	margin-top: 15%;
 }
 body {
 	font-family: "Iceland", Helvetica;
