@@ -1,7 +1,7 @@
 const Footer = (props) => {
 	return (
-		<div class='nav nav-masthead justify-content-center float-md'>
-			<footer class='mt-auto text-white-50'>
+		<div className='nav nav-masthead justify-content-center float-md'>
+			<footer className='mt-auto'>
 			<p>FINSTAGRAM™ | Designed in California | Made in China</p>
 				
 
