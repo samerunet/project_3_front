@@ -54,9 +54,20 @@
 		body {
 			font-family: "Iceland", Helvetica;
 		}
-		
+		#vid {
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			min-width: 100%;
+			min-height: 100%;
+			z-index: -3;
+			}
 	</style>
 	<body>
+		<video autoplay playsinline loop controls-hide id="vid">
+			<source src="/insta.mp4"/>
+		  </video>
+		  
 		<div id="fb-root"></div>
 		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" nonce="XI6vbeGO"></script>
 		<noscript>You need to enable JavaScript to run this app.</noscript>

@@ -58,7 +58,7 @@ const Newform = ({
 					onChange={handlesetCaptions}
 				/>
 				<br />
-				<input type='submit' value='Add new post' />
+				<input className='btn btn-primary'type='submit' value='Add new post' />
 			</form>
 		</div>
 	);

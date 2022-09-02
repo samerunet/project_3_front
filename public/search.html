@@ -79,6 +79,15 @@
   color: #333;
   text-shadow: none; /* Prevent inheritance from `body` */
     }
+
+    #vid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -3;
+}
     </style>
    
 
@@ -87,6 +96,9 @@
     <link rel="stylesheet" type="text/css" href="/src/search.css" />
   </head>
   <body class="d-flex h-100 text-center text-bg-dark">
+    <video autoplay playsinline loop controls-hide id="vid">
+			<source src="/insta.mp4"/>
+		  </video>
     
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
