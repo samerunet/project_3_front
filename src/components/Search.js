@@ -13,24 +13,12 @@ const Search = (props) => {
 						<a
 							className='nav-link fw-bold py-1 px-0 nav'
 							aria-current='page'
-							href='/ws2/cover'
+							href='/'
 						>
 							Home
 						</a>
-
-						<a className='nav-link fw-bold py-1 px-0' href='/ws2/resume'>
-							placeholder
-						</a>
-
-						<a className='nav-link fw-bold py-1 px-0' href='/ws2'>
-							placeholder
-						</a>
-
-						<a className='nav-link fw-bold py-1 px-0' href='/ws22'>
-							placeholder
-						</a>
-
-						<a className='nav-link fw-bold py-1 px-0' href='/ws2/search'>
+						
+						<a className='nav-link fw-bold py-1 px-0' href='/search'>
 							Search
 						</a>
 
