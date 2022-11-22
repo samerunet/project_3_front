@@ -1,0 +1,128 @@
+
+[{
+    "id": 1,
+    "Assigned": "dev1",
+    "Priority": "High",
+    "Description": "Create route is not being read correctly"
+}, {
+    "id": 2,
+    "Assigned": "dev2",
+    "Priority": "Medium",
+    "Description": "adjust import paths to enable Heroku deploy"
+    
+}, {
+    "id": 3,
+    "Assigned": "dev1",
+    "Priority": "High",
+    "Description": "Add OAuth Functionality"
+}, {
+    "id": 4,
+    "Assigned": "dev3",
+    "Priority": "Low",
+    "Description": "Search for Transitions for page to page"
+}, {
+    "id": 5,
+    "Assigned": "dev1",
+    "Priority": "Medium",
+    "Description": "add easter egg to app"
+    
+}, {
+    "id": 7,
+    "Assigned": "dev1",
+    "Priority": "High",
+    "Description": "fix all typos in portfolio website"
+}, {
+    "id": 8,
+    "Assigned": "dev1",
+    "Priority": "High",
+    "Description": "Link all Heroku hosted apps to porfolio"
+}, {
+    "id": 9,
+    "Assigned": "dev1",
+    "Priority": "medium",
+    "Description": "Ensure domain is correctly displaying for wordpress"
+}, {
+    "id": 10,
+    "Assigned": "dev2",
+    "Priority": "Low",
+    "Description": "Work on CSS to make BUGGER app seem more viewer friendly"
+}, {
+    "id": 11,
+    "Assigned": "dev2",
+    "Priority": "Medium",
+    "Description": "BUGGER APP is not displaying corretly on Mobile"
+}
+
+] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
